@@ -40,8 +40,3 @@ class Map
 
 		@map = new google.maps.Map(document.getElementById("map"), opts)
 		@resize()
-
-		setTimeout =>
-			@setCenter(40.488304, -74.44775)
-			@setZoom(14)
-		, 2000
