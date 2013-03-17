@@ -1,7 +1,7 @@
 $(document).ready ->
+	# center = new Center()
 	map = new Map()
-	location = new Location()
-	location.track (loc) ->
-		console.log(loc)
-		map.setCenter(loc.latitude, loc.longitude)
+	locate = (d) ->
+		map.setCenter(d.latitude, d.longitude)
 		map.setZoom(13)
+	location = new Location(locate)

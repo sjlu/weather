@@ -1,7 +1,17 @@
 class Location
 	url: 'http://sjlu.cities.jit.su'
 
-	constructor: ->
+	constructor: (handler) ->
+		that = this;
+
+		$('#track').click =>
+			@track(handler)
+
+		$('#zip').keyup (e) ->
+			if (e.keyCode == 13)
+				zip = $(@).val()
+				that.locateByZipcode(zip, handler)
+
 
 	locateByZipcode: (zip, handler) ->
 		url = @url+'/zip/'+zip

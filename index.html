@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
+	<meta name="description" content="Redoing the way we look at weather.">
 	<meta name="keywords" content="">
 
 	<title>Weather</title>
@@ -12,6 +12,11 @@
 </head>
 <body>
 	<div id="map"></div>
+	<div id="container">
+		<div id="location" class="center box">
+			<button id="track" class="btn"><i class="icon-map-marker"></i> Track My Location</button><span id="or">or</span><input id="zip" type="text" class="input-medium search-query" placeholder="Use My Zipcode" />
+		</div>
+	</div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>

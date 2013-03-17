@@ -2,8 +2,11 @@ class Map
 	constructor: ->
 		@create()
 
-		$(window).resize =>
+		resize = _.debounce => 
 			@resize()
+		, 300
+		$(window).resize =>
+			resize()
 
 	setCenter: (lat, lng) ->
 		@center = new google.maps.LatLng(lat, lng)
