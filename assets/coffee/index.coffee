@@ -28,6 +28,9 @@ $(document).ready ->
 
 	# Helper functions
 
+	hash = (zip) ->
+		window.location.hash = "#/" + zip
+
 	handlebar = (id) ->
 		Handlebars.compile($(id).html())
 
@@ -51,6 +54,7 @@ $(document).ready ->
 		weather.retrieve(d.zipcode, weathered)
 		map.setCenter(d.latitude, d.longitude)
 		map.setZoom(13)
+		hash(d.zipcode)
 
 	# Binding events
 
@@ -63,3 +67,11 @@ $(document).ready ->
 			zip = $(@).val()
 			phase '#loading', '#location', ->
 				location.locateByZipcode(zip, located)
+
+	# Routes
+	Path.map('#/:zip').to -> 
+		zip = this.params.zip
+		phase '#loading', '#location', ->
+			location.locateByZipcode(zip, located)
+
+	Path.listen();
