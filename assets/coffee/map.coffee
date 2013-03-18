@@ -10,6 +10,7 @@ class Map
 
 	setCenter: (lat, lng) ->
 		@center = new google.maps.LatLng(lat, lng)
+		@mark(lat, lng)
 		@map.panTo(@center)
 
 	setZoom: (level) ->
@@ -43,3 +44,8 @@ class Map
 
 		@map = new google.maps.Map(document.getElementById("map"), opts)
 		@resize()
+
+	mark: (lat, lng) ->
+		new google.maps.Marker
+			position: new google.maps.LatLng(lat, lng)
+			map: @map
