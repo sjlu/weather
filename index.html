@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Redoing the way we look at weather.">
+	<meta name="keywords" content="">
+
+	<title>Weather</title>
+
+	<link href="assets/style.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="map"></div>
+	<div id="container">
+		<div id="location" class="center box">
+			<button id="track" class="btn"><i class="icon-map-marker"></i> Track My Location</button><span id="or">or</span><input id="zip" type="text" class="input-medium search-query" placeholder="Use My Zipcode" />
+		</div>
+		<div id="loading" class="center box"></div>
+		<div id="weather" class="center box">
+			<h1></h1>
+			<h2></h2>
+			<div></div>
+		</div>
+	</div>
+
+	<script id="day" type="text/x-handlebars-template">
+		<p>{{day.readable}} - {{forecast.prediction.prediction}} - {{forecast.temperature.actual.max}}/{{forecast.temperature.actual.min}}</p>
+	</script>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.7.0/lodash.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/spin.js/1.2.7/spin.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0-rc.3/handlebars.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/path.js/0.8.4/path.min.js"></script>
+	<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyC0i2iZdudnzZinZl-wu5gf4j0lJWVkWIo&sensor=true"></script>
+	<script src="assets/app.js"></script>
+</body>
+</html>
